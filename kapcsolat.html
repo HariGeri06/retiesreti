@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapcsolat</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/form.js"></script>
+<script defer src="js/calculator.js"></script>
+</head>
+<body>
+<header class="site-header" id="mainHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Réti és Réti Ügyvédi Iroda logó">
+    </a>
+
+    <button class="mobile-menu-toggle" aria-label="Menü megnyitása" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Kezdőlap</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="szakteruletek.html">Szakterületek</a>
+      <a href="munkatarsak.html">Munkatársak</a>
+      <a href="kapcsolat.html" class="nav-btn">Kapcsolat</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="intro">
+    <div class="intro-content">
+      <div class="intro-line"></div>
+      <div class="intro-text">
+        <h1>Lépjen kapcsolatba velünk</h1>
+        <p>Kérjen időpontot konzultációra, vagy kérdezzen szakértőinktől. Irodánk Budapest szívében várja Önt.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+    
+    <aside class="contact-sidebar">
+      
+      <div class="info-card">
+        <h3>Elérhetőségeink</h3>
+        <ul class="contact-list">
+          <li>
+            <span class="icon">📍</span>
+            <div>
+              <strong>Iroda címe:</strong><br>
+              1054 Budapest, Szabadság tér 7.
+            </div>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <div>
+              <strong>Telefon:</strong><br>
+              <a href="tel:+3612345678">+36 1 234 5678</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <div>
+              <strong>Email:</strong><br>
+              <a href="mailto:iroda@retiesreti.hu">iroda@retiesreti.hu</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="calculator-card">
+        <h3>⚖️ Díjkalkulátor</h3>
+        <p class="calc-desc">Becsülje meg a várható munkadíjat óradíj alapú elszámolás esetén.</p>
+        
+        <div class="calc-input-group">
+          <label for="hours">Várható óraszám:</label>
+          <input type="number" id="hours" placeholder="pl. 5" min="1">
+        </div>
+        
+        <button onclick="calculate()" class="calc-btn">Számítás</button>
+        
+        <div id="result-box" class="result-hidden">
+          <span>Becsült összeg:</span>
+          <strong id="result">0 Ft</strong>
+        </div>
+      </div>
+
+    </aside>
+
+    <section class="form-section">
+      <div class="form-card">
+        <h2>Üzenet küldése</h2>
+        <form id="contactForm" novalidate>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Teljes név *</label>
+              <input type="text" id="name" placeholder="Az Ön neve">
+            </div>
+            <div class="form-group">
+              <label for="email">Email cím *</label>
+              <input type="email" id="email" placeholder="pelda@email.hu">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Telefonszám</label>
+              <input type="tel" id="phone" placeholder="+36 30 123 4567">
+            </div>
+            <div class="form-group">
+              <label for="type">Ügytípus</label>
+              <select id="type">
+                <option value="">Válasszon ügytípust...</option>
+                <option value="cegjog">Cégjog & Vállalkozások</option>
+                <option value="ingatlan">Ingatlanjog</option>
+                <option value="csalad">Családjog</option>
+                <option value="egyeb">Egyéb</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group radio-group">
+            <span class="label-text">Az ügy sürgőssége:</span>
+            <div class="radio-options">
+              <label class="radio-container">
+                <input type="radio" name="urgent" value="nem" checked>
+                <span class="radio-mark"></span>
+                Normál
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="urgent" value="igen">
+                <span class="radio-mark"></span>
+                Sürgős
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Üzenet szövege</label>
+            <textarea id="message" placeholder="Kérjük, röviden írja le, miben segíthetünk..."></textarea>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-container">
+              <input type="checkbox" id="gdpr">
+              <span class="checkmark"></span>
+              Elfogadom az <a href="#">Adatkezelési Tájékoztatót</a> és hozzájárulok adataim kezeléséhez. *
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Üzenet elküldése</button>
+          
+          <div id="form-message" class="status-msg"></div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</main>
+<footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Réti és Réti Ügyvédi Iroda</h4>
+        <p>Tradíció és szakértelem 1991 óta.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kapcsolat</h4>
+        <p>📍 1054 Budapest, Szabadság tér 7.</p>
+        <p>📞 +36 1 234 5678</p>
+        <p>✉️ iroda@retiesreti.hu</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigáció</h4>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="szakteruletek.html">Szakterületek</a>
+        <a href="adatvedelem.html">Adatvédelem</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2023 Réti és Réti Ügyvédi Iroda. Minden jog fenntartva.
+    </div>
+  </footer>
+</body>
+</html>
